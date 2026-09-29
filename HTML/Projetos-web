@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por que ler a Bíblia?</title>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #111827;
+            margin: 0;
+            padding: 30px;
+            background-color: white;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-top: 25px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #111827;
+            text-decoration: underline;
+        }
+
+        img {
+            width: 400px;
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .destaque {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Por que ler a Bíblia? </h1>
+
+    <p>
+        A Bíblia é um dos livros mais conhecidos do mundo e possui ensinamentos
+        sobre fé, esperança, amor, respeito e como podemos lidar com diferentes
+        situações da vida. E é a cura e a única satisfação plena para os nossos problemas.
+        Sendo a palavra da vida.
+    </p>
+
+    <p>
+        Ler a Bíblia pode ser um momento de reflexão e aprendizado. Para muitas
+        pessoas, a leitura ajuda a fortalecer a fé, encontrar inspiração e
+        conhecer melhor os ensinamentos cristãos.
+    </p>
+
+    <h2>Motivos para ler a Bíblia</h2>
+
+    <ul>
+        <li>Conhecer os ensinamentos de Jesus e de outros personagens bíblicos.</li>
+        <li>Refletir sobre valores como amor, perdão e esperança.</li>
+        <li>Encontrar palavras de conforto em momentos difíceis.</li>
+        <li>Fortalecer a fé e desenvolver momentos de reflexão.</li>
+        <li>Aprender sobre a história e a cultura do cristianismo.</li>
+    </ul>
+
+
+    <p>
+        A leitura pode fazer parte da rotina, mesmo que seja por alguns minutos
+        todos os dias. O importante é ler com atenção e refletir sobre aquilo
+        que está sendo aprendido.
+    </p>
+
+    <img 
+        src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=800&q=80"
+        alt="Bíblia aberta sobre uma mesa">
+
+    <h2>Saiba mais</h2>
+
+    <p>
+        Se você quiser conhecer diferentes versões e traduções da Bíblia,
+        pode acessar o site
+        <a href="https://www.bible.com/pt" target="_blank">
+            YouVersion
+        </a>.
+    </p>
+
+
+</body>
+</html>
