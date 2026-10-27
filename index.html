@@ -1,496 +1,149 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Um espaço para conhecer a Bíblia, refletir sobre seus ensinamentos e criar o hábito da leitura.">
 
-    <title>Palavra Viva | Por que ler a Bíblia?</title>
+    <title>Por que ler a Bíblia?</title>
 
     <style>
-        /* 1. ESTILOS GERAIS */
-
-        :root {
-            --fundo: #f8f5ef;
-            --cartao: #ffffff;
-            --texto: #292d27;
-            --texto-secundario: #656b61;
-            --principal: #315c46;
-            --principal-escuro: #244532;
-            --destaque: #e6bd77;
-            --borda: #e5e2d9;
-            --sombra: 0 5px 20px rgba(31, 48, 36, 0.07);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 85px;
-        }
-
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--fundo);
-            color: var(--texto);
-            line-height: 1.7;
-            transition: background 0.25s, color 0.25s;
+            background-color: #f5f1e8;
+            color: #333333;
+            line-height: 1.6;
         }
 
-        body.escuro {
-            --fundo: #18221c;
-            --cartao: #243129;
-            --texto: #f2f1e9;
-            --texto-secundario: #c0c9bf;
-            --principal: #a5d0af;
-            --principal-escuro: #c4e6c9;
-            --destaque: #e6bd77;
-            --borda: #3b4a3f;
-            --sombra: 0 5px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        a {
-            color: var(--principal);
-        }
-
-        button, input {
-            font: inherit;
-        }
-
-        button, a, input {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        button:focus-visible,
-        a:focus-visible,
-        input:focus-visible {
-            outline: 3px solid #d49c45;
-            outline-offset: 4px;
-        }
-
-        .container {
-            width: min(1100px, 92%);
-            margin: auto;
-        }
-
-        .secao {
-            padding: 65px 0;
-            scroll-margin-top: 75px;
-        }
-
-        .titulo-secao {
-            color: var(--principal);
-            font-size: 30px;
-            line-height: 1.25;
-            margin: 0 0 12px;
-        }
-
-        .subtitulo {
-            color: var(--texto-secundario);
-            margin: 0 0 30px;
-        }
-
-        .cartao {
-            background: var(--cartao);
-            border: 1px solid var(--borda);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: var(--sombra);
-        }
-
-        .botao {
-            display: inline-block;
-            padding: 12px 19px;
-            border: 0;
-            border-radius: 9px;
-            background: var(--principal);
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-
-        body.escuro .botao {
-            color: #18221c;
-        }
-
-        .botao:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-
-        .botao-secundario {
-            background: transparent;
-            border: 1px solid var(--borda);
-            color: var(--texto);
-        }
-
-        body.escuro .botao-secundario {
-            color: var(--texto);
-        }
-
-        /* 2. CABEÇALHO E NAVEGAÇÃO */
-
-        .topo {
-            background: var(--cartao);
-            border-bottom: 1px solid var(--borda);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .barra {
-            min-height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .marca {
-            color: var(--principal);
-            text-decoration: none;
-            font-size: 21px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .marca span {
-            color: var(--destaque);
-        }
-
-        .navegacao {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .navegacao a {
-            color: var(--texto);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .navegacao a:hover {
-            color: var(--principal);
-        }
-
-        .controles {
-            display: flex;
-            gap: 7px;
-        }
-
-        .controle {
-            border: 1px solid var(--borda);
-            background: var(--cartao);
-            color: var(--texto);
-            border-radius: 8px;
-            padding: 7px 10px;
-            cursor: pointer;
-        }
-
-        #menuBotao {
-            display: none;
-        }
-
-        /* 3. APRESENTAÇÃO PRINCIPAL */
-
-        .hero {
-            background:
-                linear-gradient(90deg,
-                    rgba(21, 42, 29, 0.91),
-                    rgba(21, 42, 29, 0.55)),
-                url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1800&q=85")
-                center 55% / cover;
+        header {
+            background-color: #496b50;
             color: white;
-            padding: 100px 0;
+            text-align: center;
+            padding: 25px;
         }
 
-        .hero-conteudo {
-            max-width: 680px;
+        header h1 {
+            margin-bottom: 5px;
         }
 
-        .etiqueta {
-            color: #f0cf91;
-            font-size: 13px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero h1 {
-            font-size: clamp(36px, 6vw, 58px);
-            line-height: 1.12;
-            margin: 15px 0;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 570px;
-            color: #f0f0e8;
-        }
-
-        .hero .botao {
-            margin-top: 14px;
-            background: #e6bd77;
-            color: #26372a;
-        }
-
-        /* 4. CONTEÚDO E CARTÕES */
-
-        .grade {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .icone {
-            font-size: 30px;
-        }
-
-        .cartao h3 {
-            margin: 8px 0;
-            color: var(--principal);
-        }
-
-        .cartao p {
-            margin-bottom: 0;
-        }
-
-        .introducao {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .introducao img {
-            width: 100%;
-            height: 310px;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        .versiculo {
-            background: var(--principal);
-            color: white;
-            border-radius: 15px;
-            padding: 28px;
-            margin-top: 25px;
-        }
-
-        .versiculo blockquote {
-            font-size: 21px;
-            margin: 0 0 10px;
-            font-style: italic;
-        }
-
-        .versiculo p {
-            margin: 0;
-            color: #e7eee5;
-        }
-
-        /* 5. BUSCA */
-
-        .busca {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid var(--borda);
-            border-radius: 9px;
-            background: var(--cartao);
-            color: var(--texto);
-            margin: 5px 0 25px;
-        }
-
-        .resultado {
-            color: var(--texto-secundario);
-            font-size: 14px;
-            min-height: 25px;
-        }
-
-        /* 6. PLANO DE LEITURA */
-
-        .progresso-fundo {
-            width: 100%;
-            height: 12px;
-            background: var(--borda);
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 15px 0 8px;
-        }
-
-        .progresso-barra {
-            height: 100%;
-            width: 0;
-            background: #5b9a70;
-            transition: width 0.3s;
-        }
-
-        .dia {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-            padding: 14px 0;
-            border-bottom: 1px solid var(--borda);
-        }
-
-        .dia:last-child {
-            border-bottom: 0;
-        }
-
-        .dia input {
-            width: 19px;
-            height: 19px;
-            margin-top: 5px;
-            accent-color: #4e8a60;
-            flex-shrink: 0;
-        }
-
-        .dia label {
-            cursor: pointer;
-        }
-
-        .dia strong {
-            display: block;
-        }
-
-        .dia small {
-            color: var(--texto-secundario);
-        }
-
-        .dia.concluido strong {
-            text-decoration: line-through;
-            opacity: 0.7;
-        }
-
-        /* 7. PERGUNTA INTERATIVA */
-
-        .opcoes {
-            display: grid;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .opcao {
-            text-align: left;
-            border: 1px solid var(--borda);
-            padding: 13px;
-            border-radius: 9px;
-            background: var(--cartao);
-            color: var(--texto);
-            cursor: pointer;
-        }
-
-        .opcao:hover {
-            border-color: var(--principal);
-        }
-
-        .opcao:disabled {
-            cursor: default;
-            opacity: 0.85;
-        }
-
-        #feedbackQuiz {
-            font-weight: bold;
-            min-height: 28px;
-        }
-
-        /* 8. RODAPÉ */
-
-        footer {
-            background: #213b2b;
-            color: white;
-            padding: 35px 0;
+        nav {
+            background-color: #344e38;
+            padding: 12px;
             text-align: center;
         }
 
-        footer p {
-            margin: 5px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
         }
 
-        footer a {
-            color: #f0cf91;
+        nav a:hover {
+            text-decoration: underline;
         }
 
-        .voltar {
-            display: inline-block;
+        main {
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #496b50;
+        }
+
+        img {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
+        }
+
+        .motivos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .motivo {
+            background-color: #edf2e9;
+            padding: 15px;
+            flex: 1 1 180px;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #496b50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        button:hover {
+            background-color: #344e38;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        #resultado {
             margin-top: 10px;
         }
 
-        /* 9. RESPONSIVIDADE */
+        footer {
+            background-color: #344e38;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
 
-        @media (max-width: 850px) {
-            .barra {
-                flex-wrap: wrap;
-                padding: 12px 0;
-            }
+        .escuro {
+            background-color: #222a24;
+            color: #eeeeee;
+        }
 
-            #menuBotao {
+        .escuro section {
+            background-color: #343d35;
+        }
+
+        .escuro h2 {
+            color: #b8d8b5;
+        }
+
+        .escuro .motivo {
+            background-color: #465347;
+        }
+
+        .escuro input {
+            background-color: #eeeeee;
+            color: #222222;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
                 display: inline-block;
+                margin: 5px;
             }
 
-            .navegacao {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-                padding: 10px 0;
-            }
-
-            .navegacao.aberto {
-                display: flex;
-            }
-
-            .grade {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .introducao {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 75px 0;
-            }
-        }
-
-        @media (max-width: 550px) {
-            .grade {
-                grid-template-columns: 1fr;
-            }
-
-            .secao {
-                padding: 45px 0;
-            }
-
-            .titulo-secao {
-                font-size: 26px;
-            }
-
-            .cartao {
-                padding: 19px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .controles {
-                flex-wrap: wrap;
-            }
-        }
-
-        /* Respeita quem prefere menos animação. */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                scroll-behavior: auto !important;
-                transition: none !important;
+            header h1 {
+                font-size: 27px;
             }
         }
     </style>
@@ -498,561 +151,176 @@
 
 <body>
 
-    <a href="#conteudo" class="pular"
-       style="position:absolute;left:-9999px;top:0;background:var(--cartao);padding:12px">
-        Pular para o conteúdo
-    </a>
-
-    <header class="topo">
-        <div class="container barra">
-
-            <a href="#inicio" class="marca">
-                ✦ Palavra <span>Viva</span>
-            </a>
-
-            <button class="controle" id="menuBotao"
-                    aria-expanded="false" aria-controls="navegacao">
-                ☰ Menu
-            </button>
-
-            <nav class="navegacao" id="navegacao"
-                 aria-label="Navegação principal">
-                <a href="#inicio">Início</a>
-                <a href="#importancia">Importância</a>
-                <a href="#motivos">Motivos</a>
-                <a href="#leitura">Plano de leitura</a>
-                <a href="#quiz">Quiz bíblico</a>
-            </nav>
-
-            <div class="controles" aria-label="Acessibilidade">
-                <button class="controle" id="diminuirTexto"
-                        aria-label="Diminuir tamanho do texto">A−</button>
-                <button class="controle" id="aumentarTexto"
-                        aria-label="Aumentar tamanho do texto">A+</button>
-                <button class="controle" id="modoEscuro"
-                        aria-pressed="false">🌙 Tema</button>
-            </div>
-
-        </div>
+    <header id="inicio">
+        <h1>📖 Por que ler a Bíblia?</h1>
+        <p>Conhecendo a Bíblia e seus ensinamentos.</p>
     </header>
 
-    <main id="conteudo">
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#importancia">Importância</a>
+        <a href="#motivos">Motivos</a>
+        <a href="#leitura">Leitura</a>
+    </nav>
 
-        <section class="hero" id="inicio">
-            <div class="container hero-conteudo">
-                <span class="etiqueta">Fé • Conhecimento • Esperança</span>
+    <main>
 
-                <h1>Uma palavra pode transformar o seu dia.</h1>
+        <section id="importancia">
+            <h2>A importância da Bíblia</h2>
 
-                <p>
-                    Descubra a importância da Bíblia, conheça seus ensinamentos
-                    e encontre inspiração para sua caminhada cristã.
-                </p>
+            <p>
+                A Bíblia é um dos livros mais conhecidos do mundo.
+                Ela apresenta ensinamentos sobre fé, amor, esperança
+                e respeito ao próximo.
+            </p>
 
-                <a href="#importancia" class="botao">
-                    Começar a explorar ↓
+            <p>
+                Para os cristãos, a Bíblia é a Palavra de Deus e
+                ajuda a conhecer melhor os ensinamentos de Jesus.
+                Sua leitura também pode ser um momento de reflexão
+                e aprendizado.
+            </p>
+
+            <img
+                src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=800&q=80"
+                alt="Bíblia aberta sobre uma mesa">
+
+            <p>
+                Um versículo conhecido está em Salmos 119:105:
+                "Lâmpada para os meus pés é a tua palavra e luz
+                para o meu caminho."
+            </p>
+        </section>
+
+        <section id="motivos">
+            <h2>Motivos para ler a Bíblia</h2>
+
+            <div class="motivos">
+
+                <div class="motivo">
+                    <h3>❤️ Amor</h3>
+                    <p>Aprender a amar e respeitar o próximo.</p>
+                </div>
+
+                <div class="motivo">
+                    <h3>🙏 Fé</h3>
+                    <p>Conhecer melhor a Deus e fortalecer a fé.</p>
+                </div>
+
+                <div class="motivo">
+                    <h3>🕊️ Esperança</h3>
+                    <p>Encontrar conforto nos momentos difíceis.</p>
+                </div>
+
+                <div class="motivo">
+                    <h3>💡 Sabedoria</h3>
+                    <p>Aprender com as histórias e ensinamentos bíblicos.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="leitura">
+            <h2>Vamos praticar?</h2>
+
+            <p>
+                Pesquise um tema bíblico que você deseja conhecer melhor:
+            </p>
+
+            <input
+                type="text"
+                id="tema"
+                placeholder="Exemplo: amor, fé ou esperança">
+
+            <button onclick="pesquisarTema()">Pesquisar</button>
+
+            <p id="resultado" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <h2>Teste seus conhecimentos</h2>
+
+            <p>Quem ensinou a oração do Pai Nosso?</p>
+
+            <button onclick="responder(false)">Moisés</button>
+            <button onclick="responder(true)">Jesus</button>
+            <button onclick="responder(false)">Abraão</button>
+
+            <p id="resposta" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <h2>Saiba mais</h2>
+
+            <p>
+                Você pode ler a Bíblia gratuitamente pela internet
+                e conhecer diferentes traduções.
+            </p>
+
+            <p>
+                <a href="https://www.bible.com/pt"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Acessar o site YouVersion
                 </a>
-            </div>
-        </section>
+            </p>
 
-        <section class="secao" id="importancia">
-            <div class="container">
-
-                <div class="introducao">
-                    <div>
-                        <h2 class="titulo-secao">
-                            Por que ler a Bíblia?
-                        </h2>
-
-                        <p>
-                            A Bíblia é um conjunto de livros que apresenta
-                            histórias, ensinamentos, poesias e mensagens
-                            espirituais importantes para a fé cristã.
-                        </p>
-
-                        <p>
-                            Para muitos cristãos, ela é a Palavra de Deus,
-                            uma fonte de orientação e uma oportunidade de
-                            conhecer melhor o caráter e os ensinamentos de Jesus.
-                        </p>
-
-                        <p>
-                            A leitura também pode ser um momento de reflexão,
-                            aprendizado e crescimento pessoal.
-                        </p>
-                    </div>
-
-                    <img
-                        src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=900&q=80"
-                        alt="Bíblia aberta em um ambiente tranquilo"
-                        loading="lazy">
-                </div>
-
-                <div class="versiculo">
-                    <blockquote>
-                        “Lâmpada para os meus pés é a tua palavra e luz
-                        para o meu caminho.”
-                    </blockquote>
-                    <p>Salmos 119:105 — referência bíblica</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="secao" id="motivos">
-            <div class="container">
-
-                <h2 class="titulo-secao">O que podemos aprender?</h2>
-
-                <p class="subtitulo">
-                    Explore alguns temas presentes nos ensinamentos bíblicos.
-                </p>
-
-                <label for="busca">
-                    Pesquise um tema, como amor, fé ou esperança:
-                </label>
-
-                <input
-                    type="search"
-                    class="busca"
-                    id="busca"
-                    placeholder="Digite para pesquisar..."
-                    aria-describedby="resultadoBusca">
-
-                <p class="resultado" id="resultadoBusca"
-                   aria-live="polite"></p>
-
-                <div class="grade" id="gradeMotivos">
-
-                    <article class="cartao item-tema"
-                             data-busca="amor respeito próximo compaixão">
-                        <span class="icone" aria-hidden="true">❤️</span>
-                        <h3>Amor ao próximo</h3>
-                        <p>
-                            Aprender a tratar as pessoas com amor, respeito,
-                            paciência e compaixão.
-                        </p>
-                    </article>
-
-                    <article class="cartao item-tema"
-                             data-busca="fé confiança deus oração">
-                        <span class="icone" aria-hidden="true">🙏</span>
-                        <h3>Fé e confiança</h3>
-                        <p>
-                            Refletir sobre a confiança em Deus e a importância
-                            da oração na caminhada cristã.
-                        </p>
-                    </article>
-
-                    <article class="cartao item-tema"
-                             data-busca="esperança consolo dificuldades">
-                        <span class="icone" aria-hidden="true">🕊️</span>
-                        <h3>Esperança</h3>
-                        <p>
-                            Encontrar mensagens de consolo e perseverança
-                            para enfrentar dificuldades.
-                        </p>
-                    </article>
-
-                    <article class="cartao item-tema"
-                             data-busca="perdão reconciliação misericórdia">
-                        <span class="icone" aria-hidden="true">🤝</span>
-                        <h3>Perdão</h3>
-                        <p>
-                            Refletir sobre misericórdia, reconciliação e
-                            a importância de perdoar.
-                        </p>
-                    </article>
-
-                    <article class="cartao item-tema"
-                             data-busca="sabedoria conhecimento decisões">
-                        <span class="icone" aria-hidden="true">💡</span>
-                        <h3>Sabedoria</h3>
-                        <p>
-                            Conhecer histórias e ensinamentos que ajudam
-                            a refletir sobre nossas decisões.
-                        </p>
-                    </article>
-
-                    <article class="cartao item-tema"
-                             data-busca="jesus evangelhos vida ensinamentos">
-                        <span class="icone" aria-hidden="true">📖</span>
-                        <h3>Conhecer Jesus</h3>
-                        <p>
-                            Conhecer a vida, as parábolas e os ensinamentos
-                            de Jesus apresentados nos Evangelhos.
-                        </p>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="secao" id="leitura">
-            <div class="container">
-
-                <h2 class="titulo-secao">Meu plano de leitura</h2>
-
-                <p class="subtitulo">
-                    Comece aos poucos! Marque cada etapa quando terminar.
-                    Seu progresso fica salvo neste navegador.
-                </p>
-
-                <div class="cartao">
-
-                    <strong id="textoProgresso">0 de 5 leituras concluídas</strong>
-
-                    <div class="progresso-fundo"
-                         role="progressbar"
-                         id="progresso"
-                         aria-label="Progresso do plano de leitura"
-                         aria-valuemin="0"
-                         aria-valuemax="5"
-                         aria-valuenow="0">
-                        <div class="progresso-barra" id="barraProgresso"></div>
-                    </div>
-
-                    <div id="listaLeitura">
-
-                        <div class="dia">
-                            <input type="checkbox" id="dia1" data-dia="1">
-                            <label for="dia1">
-                                <strong>Dia 1 — O começo</strong>
-                                <small>Gênesis 1:1–5</small>
-                            </label>
-                        </div>
-
-                        <div class="dia">
-                            <input type="checkbox" id="dia2" data-dia="2">
-                            <label for="dia2">
-                                <strong>Dia 2 — A confiança em Deus</strong>
-                                <small>Salmos 23</small>
-                            </label>
-                        </div>
-
-                        <div class="dia">
-                            <input type="checkbox" id="dia3" data-dia="3">
-                            <label for="dia3">
-                                <strong>Dia 3 — O amor</strong>
-                                <small>1 Coríntios 13</small>
-                            </label>
-                        </div>
-
-                        <div class="dia">
-                            <input type="checkbox" id="dia4" data-dia="4">
-                            <label for="dia4">
-                                <strong>Dia 4 — Os ensinamentos de Jesus</strong>
-                                <small>Mateus 5:1–12</small>
-                            </label>
-                        </div>
-
-                        <div class="dia">
-                            <input type="checkbox" id="dia5" data-dia="5">
-                            <label for="dia5">
-                                <strong>Dia 5 — A esperança</strong>
-                                <small>Romanos 8:31–39</small>
-                            </label>
-                        </div>
-
-                    </div>
-
-                    <p id="mensagemLeitura" aria-live="polite"></p>
-
-                    <button class="botao botao-secundario"
-                            id="reiniciarLeitura">
-                        Reiniciar plano
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section class="secao" id="quiz">
-            <div class="container">
-
-                <h2 class="titulo-secao">Teste seus conhecimentos</h2>
-
-                <p class="subtitulo">
-                    Uma pergunta rápida sobre a Bíblia. Vamos ver se você acerta?
-                </p>
-
-                <div class="cartao">
-                    <h3>Quem ensinou a oração conhecida como Pai Nosso?</h3>
-
-                    <div class="opcoes" id="opcoesQuiz">
-                        <button class="opcao" data-correta="false">
-                            A) Moisés
-                        </button>
-
-                        <button class="opcao" data-correta="true">
-                            B) Jesus
-                        </button>
-
-                        <button class="opcao" data-correta="false">
-                            C) Abraão
-                        </button>
-
-                        <button class="opcao" data-correta="false">
-                            D) Salomão
-                        </button>
-                    </div>
-
-                    <p id="feedbackQuiz" aria-live="polite"></p>
-
-                    <button class="botao botao-secundario"
-                            id="novoQuiz" hidden>
-                        Tentar novamente
-                    </button>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="secao" id="saibaMais">
-            <div class="container">
-                <div class="cartao">
-                    <h2 class="titulo-secao">Continue aprendendo</h2>
-
-                    <p>
-                        Você pode ler diferentes traduções da Bíblia,
-                        acompanhar planos de leitura e estudar passagens
-                        bíblicas online.
-                    </p>
-
-                    <a class="botao"
-                       href="https://www.bible.com/pt"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Acessar YouVersion ↗
-                    </a>
-                </div>
-            </div>
+            <button onclick="mudarTema()">Mudar tema da página</button>
         </section>
 
     </main>
 
     <footer>
-        <div class="container">
-            <p><strong>✦ Palavra Viva</strong></p>
-            <p>Projeto acadêmico de Desenvolvimento de Interfaces Web.</p>
-            <p>Desenvolvido com HTML5, CSS3 e JavaScript.</p>
-            <a class="voltar" href="#inicio">Voltar ao início ↑</a>
-        </div>
+        <p>Projeto de Desenvolvimento de Interfaces Web</p>
+        <p>Feito com HTML, CSS e JavaScript.</p>
     </footer>
 
     <script>
-        // 1. MENU RESPONSIVO
+        // Pesquisa de temas bíblicos
 
-        const menuBotao = document.getElementById("menuBotao");
-        const navegacao = document.getElementById("navegacao");
+        function pesquisarTema() {
+            let tema = document.getElementById("tema").value;
+            let resultado = document.getElementById("resultado");
 
-        menuBotao.addEventListener("click", function () {
-            const aberto = navegacao.classList.toggle("aberto");
+            tema = tema.toLowerCase().trim();
 
-            menuBotao.setAttribute("aria-expanded", aberto);
-            menuBotao.textContent = aberto ? "✕ Fechar" : "☰ Menu";
-        });
-
-        // Fecha o menu depois que um link é selecionado.
-
-        navegacao.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                navegacao.classList.remove("aberto");
-                menuBotao.setAttribute("aria-expanded", "false");
-                menuBotao.textContent = "☰ Menu";
-            });
-        });
-
-        // 2. MODO ESCURO
-
-        const modoEscuro = document.getElementById("modoEscuro");
-
-        try {
-            if (localStorage.getItem("palavraTema") === "escuro") {
-                document.body.classList.add("escuro");
-                modoEscuro.setAttribute("aria-pressed", "true");
-                modoEscuro.textContent = "☀️ Tema";
-            }
-        } catch (erro) {
-            console.log("Não foi possível recuperar o tema salvo.");
-        }
-
-        modoEscuro.addEventListener("click", function () {
-            const escuro = document.body.classList.toggle("escuro");
-
-            modoEscuro.setAttribute("aria-pressed", escuro);
-            modoEscuro.textContent = escuro ? "☀️ Tema" : "🌙 Tema";
-
-            try {
-                localStorage.setItem("palavraTema", escuro ? "escuro" : "claro");
-            } catch (erro) {
-                console.log("Não foi possível salvar a preferência de tema.");
-            }
-        });
-
-        // 3. AJUSTE DO TAMANHO DO TEXTO
-
-        let tamanhoTexto = 16;
-
-        document.getElementById("aumentarTexto").addEventListener("click", function () {
-            tamanhoTexto = Math.min(tamanhoTexto + 2, 24);
-            document.body.style.fontSize = tamanhoTexto + "px";
-        });
-
-        document.getElementById("diminuirTexto").addEventListener("click", function () {
-            tamanhoTexto = Math.max(tamanhoTexto - 2, 12);
-            document.body.style.fontSize = tamanhoTexto + "px";
-        });
-
-        // 4. BUSCA DE TEMAS
-
-        const campoBusca = document.getElementById("busca");
-        const temas = document.querySelectorAll(".item-tema");
-        const resultadoBusca = document.getElementById("resultadoBusca");
-
-        campoBusca.addEventListener("input", function () {
-            const termo = campoBusca.value
-                .toLocaleLowerCase("pt-BR")
-                .trim();
-
-            let encontrados = 0;
-
-            temas.forEach(function (tema) {
-                const texto = (
-                    tema.innerText + " " + tema.dataset.busca
-                ).toLocaleLowerCase("pt-BR");
-
-                const corresponde = texto.includes(termo);
-
-                tema.hidden = !corresponde;
-
-                if (corresponde) {
-                    encontrados++;
-                }
-            });
-
-            if (termo === "") {
-                resultadoBusca.textContent = "Todos os temas estão sendo exibidos.";
-            } else if (encontrados === 0) {
-                resultadoBusca.textContent = "Nenhum tema encontrado. Tente outra palavra.";
+            if (tema === "amor") {
+                resultado.textContent =
+                    "Você pode ler sobre o amor em 1 Coríntios 13.";
+            } else if (tema === "fé") {
+                resultado.textContent =
+                    "Você pode estudar Hebreus 11, que fala sobre a fé.";
+            } else if (tema === "esperança") {
+                resultado.textContent =
+                    "Você pode ler Romanos 15:13.";
+            } else if (tema === "") {
+                resultado.textContent =
+                    "Digite um tema antes de pesquisar.";
             } else {
-                resultadoBusca.textContent =
-                    encontrados + (encontrados === 1
-                        ? " tema encontrado."
-                        : " temas encontrados.");
+                resultado.textContent =
+                    "Não encontrei esse tema. Tente amor, fé ou esperança.";
             }
-        });
-
-        // 5. PLANO DE LEITURA COM PROGRESSO SALVO
-
-        const leituras = document.querySelectorAll("[data-dia]");
-        const textoProgresso = document.getElementById("textoProgresso");
-        const barraProgresso = document.getElementById("barraProgresso");
-        const progresso = document.getElementById("progresso");
-        const mensagemLeitura = document.getElementById("mensagemLeitura");
-
-        function atualizarProgresso(salvar = true) {
-            let concluidas = 0;
-
-            leituras.forEach(function (leitura) {
-                const dia = leitura.closest(".dia");
-
-                dia.classList.toggle("concluido", leitura.checked);
-
-                if (leitura.checked) {
-                    concluidas++;
-                }
-
-                if (salvar) {
-                    try {
-                        localStorage.setItem(
-                            "palavraDia" + leitura.dataset.dia,
-                            leitura.checked
-                        );
-                    } catch (erro) {
-                        console.log("Não foi possível salvar o progresso.");
-                    }
-                }
-            });
-
-            const porcentagem = (concluidas / leituras.length) * 100;
-
-            textoProgresso.textContent =
-                concluidas + " de " + leituras.length + " leituras concluídas";
-
-            barraProgresso.style.width = porcentagem + "%";
-            progresso.setAttribute("aria-valuenow", concluidas);
-
-            mensagemLeitura.textContent =
-                concluidas === leituras.length
-                    ? "Parabéns! Você concluiu todo o plano de leitura! 🎉"
-                    : concluidas > 0
-                        ? "Continue assim! Você está progredindo."
-                        : "Seu progresso aparecerá aqui.";
         }
 
-        leituras.forEach(function (leitura) {
-            try {
-                leitura.checked =
-                    localStorage.getItem("palavraDia" + leitura.dataset.dia) === "true";
-            } catch (erro) {
-                leitura.checked = false;
+        // Pergunta bíblica
+
+        function responder(correta) {
+            let resposta = document.getElementById("resposta");
+
+            if (correta) {
+                resposta.textContent =
+                    "Parabéns! A resposta correta é Jesus. (Mateus 6:9-13)";
+            } else {
+                resposta.textContent =
+                    "Resposta incorreta. Tente novamente!";
             }
+        }
 
-            leitura.addEventListener("change", function () {
-                atualizarProgresso();
-            });
-        });
+        // Mudar o tema da página
 
-        atualizarProgresso(false);
-
-        document.getElementById("reiniciarLeitura").addEventListener("click", function () {
-            const confirmar = window.confirm(
-                "Deseja realmente apagar seu progresso de leitura?"
-            );
-
-            if (confirmar) {
-                leituras.forEach(function (leitura) {
-                    leitura.checked = false;
-                });
-
-                atualizarProgresso();
-            }
-        });
-
-        // 6. QUIZ COM RESPOSTA INTERATIVA
-
-        const opcoesQuiz = document.querySelectorAll(".opcao");
-        const feedbackQuiz = document.getElementById("feedbackQuiz");
-        const novoQuiz = document.getElementById("novoQuiz");
-
-        opcoesQuiz.forEach(function (opcao) {
-            opcao.addEventListener("click", function () {
-                const correta = opcao.dataset.correta === "true";
-
-                opcoesQuiz.forEach(function (item) {
-                    item.disabled = true;
-                });
-
-                if (correta) {
-                    feedbackQuiz.textContent =
-                        "Muito bem! Jesus ensinou essa oração aos seus discípulos. (Mateus 6:9–13)";
-                } else {
-                    feedbackQuiz.textContent =
-                        "Não foi dessa vez! A resposta correta é Jesus. Leia Mateus 6:9–13.";
-                }
-
-                novoQuiz.hidden = false;
-            });
-        });
-
-        novoQuiz.addEventListener("click", function () {
-            opcoesQuiz.forEach(function (opcao) {
-                opcao.disabled = false;
-            });
-
-            feedbackQuiz.textContent = "";
-            novoQuiz.hidden = true;
-        });
+        function mudarTema() {
+            document.body.classList.toggle("escuro");
+        }
     </script>
 
 </body>
