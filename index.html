@@ -1,110 +1,234 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Por que ler a Bíblia?</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            color: #111827;
             margin: 0;
-            padding: 30px;
-            background-color: white;
-            line-height: 1.6;
+            background-color: #f7f1e8;
+            color: #3e3025;
+            line-height: 1.7;
         }
 
-        h1 {
-            font-size: 32px;
-            margin-bottom: 15px;
+        header {
+            background-color: #6b4932;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 17px;
+            margin-bottom: 0;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
         }
 
         h2 {
-            font-size: 26px;
-            margin-top: 25px;
-            margin-bottom: 8px;
+            color: #805735;
+            margin-top: 0;
+            border-bottom: 2px solid #e8d5bd;
+            padding-bottom: 8px;
         }
 
-        p {
-            font-size: 16px;
-            margin: 8px 0;
+        .imagem-biblia {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 10px;
         }
 
-        ul {
-            padding-left: 25px;
+        .motivos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
-        li {
-            margin-bottom: 10px;
+        .motivo {
+            background-color: #f7f1e8;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #a77b50;
         }
 
-        a {
-            color: #111827;
-            text-decoration: underline;
+        .motivo h3 {
+            color: #6b4932;
+            margin-top: 0;
+            margin-bottom: 5px;
         }
 
-        img {
-            width: 400px;
-            max-width: 100%;
+        .botao {
+            display: inline-block;
+            background-color: #6b4932;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
             border-radius: 8px;
             margin-top: 10px;
         }
 
-        .destaque {
-            font-weight: bold;
+        .botao:hover {
+            background-color: #8b6547;
+        }
+
+        footer {
+            background-color: #6b4932;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .motivos {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 18px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Por que ler a Bíblia? </h1>
+    <header>
+        <h1>📖 Por que ler a Bíblia?</h1>
+        <p>Uma palavra de fé, esperança e amor para todos os dias.</p>
+    </header>
 
-    <p>
-        A Bíblia é um dos livros mais conhecidos do mundo e possui ensinamentos
-        sobre fé, esperança, amor, respeito e como podemos lidar com diferentes
-        situações da vida. E é a cura e a única satisfação plena para os nossos problemas.
-        Sendo a palavra da vida.
-    </p>
+    <main>
 
-    <p>
-        Ler a Bíblia pode ser um momento de reflexão e aprendizado. Para muitas
-        pessoas, a leitura ajuda a fortalecer a fé, encontrar inspiração e
-        conhecer melhor os ensinamentos cristãos.
-    </p>
+        <section>
+            <h2>A importância da Bíblia</h2>
 
-    <h2>Motivos para ler a Bíblia</h2>
+            <p>
+                A Bíblia é um dos livros mais conhecidos do mundo e possui
+                ensinamentos sobre fé, esperança, amor, respeito e como podemos
+                lidar com diferentes situações da vida. Para os cristãos,
+                ela é a Palavra de Deus e uma fonte de orientação espiritual.
+            </p>
 
-    <ul>
-        <li>Conhecer os ensinamentos de Jesus e de outros personagens bíblicos.</li>
-        <li>Refletir sobre valores como amor, perdão e esperança.</li>
-        <li>Encontrar palavras de conforto em momentos difíceis.</li>
-        <li>Fortalecer a fé e desenvolver momentos de reflexão.</li>
-        <li>Aprender sobre a história e a cultura do cristianismo.</li>
-    </ul>
+            <p>
+                Ler a Bíblia pode ser um momento de reflexão e aprendizado.
+                A leitura ajuda muitas pessoas a fortalecer a fé, encontrar
+                inspiração e conhecer melhor os ensinamentos de Jesus.
+            </p>
 
+            <img
+                class="imagem-biblia"
+                src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1200&q=85"
+                alt="Bíblia aberta sobre uma mesa">
+        </section>
 
-    <p>
-        A leitura pode fazer parte da rotina, mesmo que seja por alguns minutos
-        todos os dias. O importante é ler com atenção e refletir sobre aquilo
-        que está sendo aprendido.
-    </p>
+        <section>
+            <h2>Motivos para ler a Bíblia</h2>
 
-    <img 
-        src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=800&q=80"
-        alt="Bíblia aberta sobre uma mesa">
+            <div class="motivos">
 
-    <h2>Saiba mais</h2>
+                <div class="motivo">
+                    <h3>❤️ Amor</h3>
+                    <p>
+                        Aprender a amar o próximo e tratar as pessoas
+                        com respeito.
+                    </p>
+                </div>
 
-    <p>
-        Se você quiser conhecer diferentes versões e traduções da Bíblia,
-        pode acessar o site
-        <a href="https://www.bible.com/pt" target="_blank">
-            YouVersion
-        </a>.
-    </p>
+                <div class="motivo">
+                    <h3>🙏 Fé</h3>
+                    <p>
+                        Conhecer melhor a Deus e fortalecer a caminhada
+                        cristã.
+                    </p>
+                </div>
 
+                <div class="motivo">
+                    <h3>🕊️ Esperança</h3>
+                    <p>
+                        Encontrar palavras de conforto nos momentos
+                        difíceis da vida.
+                    </p>
+                </div>
+
+                <div class="motivo">
+                    <h3>💡 Aprendizado</h3>
+                    <p>
+                        Conhecer histórias, ensinamentos e valores
+                        presentes nas Escrituras.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Como começar a ler?</h2>
+
+            <p>
+                Se você ainda não tem o hábito de ler a Bíblia, pode começar
+                pelo Evangelho de João, que apresenta a vida e os ensinamentos
+                de Jesus.
+            </p>
+
+            <p>
+                Separe alguns minutos por dia, leia com atenção e procure
+                refletir sobre o que aprendeu. O importante é dar o primeiro
+                passo e continuar aprendendo.
+            </p>
+        </section>
+
+        <section>
+            <h2>Saiba mais</h2>
+
+            <p>
+                Quer ler a Bíblia pelo celular ou computador? Acesse o
+                YouVersion para conhecer diferentes versões e traduções.
+            </p>
+
+            <a class="botao"
+               href="https://www.bible.com/pt"
+               target="_blank"
+               rel="noopener noreferrer">
+                Ler a Bíblia online →
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Projeto de Desenvolvimento de Interface Web</p>
+        <p>Feito com HTML e CSS 📖</p>
+    </footer>
 
 </body>
 </html>
+```
