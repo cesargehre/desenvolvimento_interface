@@ -1,1 +1,122 @@
+// Ex 1
+console.log("Meu nome é Lucas");
+console.log("Curso: ADS");
+console.log("Estou aprendendo JavaScript");
 
+
+// Ex 2
+const nome = "Lucas";
+const idade = 20;
+const curso = "ADS";
+console.log(nome);
+console.log(idade);
+console.log(curso);
+
+
+// Ex 3
+let pontos = 10;
+pontos = 25;
+console.log(pontos);
+
+
+// Ex 4
+let texto = "ADS";
+let inteiro = 30;
+let decimal = 3.14;
+let verdadeiro = true;
+console.log(typeof texto);
+console.log(typeof inteiro);
+console.log(typeof decimal);
+console.log(typeof verdadeiro);
+
+
+// Ex 5
+let n1 = 15;
+let n2 = 8;
+let soma = n1 + n2;
+console.log("Soma: " + soma);
+
+
+// Ex 6
+let a = 20;
+let b = 4;
+console.log("Adição: " + (a + b));
+console.log("Subtração: " + (a - b));
+console.log("Multiplicação: " + (a * b));
+console.log("Divisão: " + (a / b));
+
+
+// Ex 7
+let precoProduto = 35;
+let quantidadeComprada = 4;
+let totalCompra = precoProduto * quantidadeComprada;
+console.log("Total da compra: R$ " + totalCompra);
+
+
+// Ex 8
+let precoOriginal = 200;
+let percentual = 10;
+let valorDesconto = precoOriginal * percentual / 100;
+let precoFinal = precoOriginal - valorDesconto;
+console.log("Desconto: R$ " + valorDesconto);
+console.log("Preço final: R$ " + precoFinal);
+
+
+// Ex 9
+let nota1 = 7;
+let nota2 = 8;
+let nota3 = 9;
+let media = (nota1 + nota2 + nota3) / 3;
+console.log("Média: " + media);
+
+
+// Ex 10
+console.log("10 % 3 = " + (10 % 3));
+console.log("15 % 4 = " + (15 % 4));
+console.log("20 % 5 = " + (20 % 5));
+
+
+// Ex 11
+let saldo = 500;
+saldo += 150;
+saldo -= 80;
+console.log("Saldo final: R$ " + saldo);
+
+
+// Ex 12
+let idadePessoa = 17;
+console.log(idadePessoa >= 18);
+console.log(idadePessoa < 18);
+console.log(idadePessoa === 17);
+
+
+// Ex 13
+console.log(10 == "10");
+console.log(10 === "10");
+console.log("O == compara só o valor e o === compara o valor e o tipo");
+
+
+// Ex 14
+let idadeUsuario = 20;
+let cadastroAtivo = true;
+console.log(idadeUsuario >= 18 && cadastroAtivo);
+
+
+// Ex 15
+let valorCompra = 100;
+let clienteVip = true;
+console.log(valorCompra >= 150 || clienteVip);
+
+
+// Ex 16
+let produto = "teclado";
+let precoUnitario = 80;
+let quantidade = 3;
+let descontoPercentual = 10;
+let subtotal = precoUnitario * quantidade;
+let desconto = subtotal * descontoPercentual / 100;
+let total = subtotal - desconto;
+console.log("Produto: " + produto);
+console.log("Subtotal: R$ " + subtotal);
+console.log("Desconto: R$ " + desconto);
+console.log("Total: R$ " + total);
