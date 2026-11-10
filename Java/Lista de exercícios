@@ -5,8 +5,8 @@ console.log("Estou aprendendo JavaScript");
 
 
 // Ex 2
-const nome = "Lucas";
-const idade = 20;
+const nome = "César";
+const idade = 19;
 const curso = "ADS";
 console.log(nome);
 console.log(idade);
