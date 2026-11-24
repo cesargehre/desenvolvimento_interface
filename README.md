@@ -1,4 +1,4 @@
-# Projetos de Desenvolvimento de Interface
+# Desenvolvimento de Interface
 
 Esta pasta reúne atividades e materiais produzidos nas aulas de **Desenvolvimento de Interface**, com foco introdutório em **JavaScript**. Os exercícios praticam conceitos fundamentais da linguagem e sua relação com páginas web.
 
